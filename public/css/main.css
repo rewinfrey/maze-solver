@@ -37,6 +37,10 @@ button {
 .first {
   margin-left: 189px;
 }
+
+#steps {
+  height: 25px;
+}
 #canvas {
   width: 741px;
   margin: auto;
