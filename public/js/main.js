@@ -57,7 +57,7 @@
     };
 
     Maze.prototype.explorer = function() {
-      if (this.has_found_end() && this.more_to_process()) {
+      if ((typeof this.has_found_end === "function" ? this.has_found_end() : void 0) && (typeof this.more_to_process === "function" ? this.more_to_process() : void 0)) {
         return this.eval_current_node(this.queue.process.shift());
       } else {
         if (this.end !== null) {

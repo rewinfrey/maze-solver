@@ -42,10 +42,10 @@ class Maze
         $('#steps').html("Sorry, no solution exists. :(")
       this.animate.draw_paths()
   
-  has_found_end?: ->
+  has_found_end: ->
     this.end == null
 
-  more_to_process?: ->
+  more_to_process: ->
     this.queue.process.length != 0
   
   eval_current_node: (node) ->

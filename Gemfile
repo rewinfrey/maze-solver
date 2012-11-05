@@ -1,3 +1,3 @@
-source "https://rubygems.org"
-sinatra, '1.0'
-coffee-script
+source "http://rubygems.org"
+gem sinatra
+gem coffee-script
