@@ -1,0 +1,47 @@
+body {
+  font-family: monaco;
+}
+
+h1 {
+  width: 220px;
+  margin: auto;
+}
+
+h3 {
+  width: 360px;
+  margin: 30px auto 0 auto;
+}
+
+textarea {
+  font-family: monaco;
+  height: 193px;
+  width: 260px;
+  overflow: hidden;
+}
+
+textarea.maze {
+  margin-left: 40px;
+}
+
+button {
+  display: inline-block;
+  height: 40px;
+  width: 100px;
+  margin-left: 207px;
+}
+
+#canvas {
+  width: 741px;
+  margin: auto;
+}
+
+#maze_row {
+  width: 898px;
+  margin: auto;
+  padding: 20px;
+}
+
+#button_row {
+  width: 1109px;
+  margin: auto;
+}
