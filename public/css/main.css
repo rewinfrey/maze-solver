@@ -38,21 +38,22 @@ button {
   margin-left: 189px;
 }
 
-#steps {
-  height: 25px;
-}
-#canvas {
-  width: 741px;
-  margin: auto;
-}
-
-#maze_row {
+.maze_row {
   width: 928px;
   margin: auto;
   padding: 20px;
 }
 
-#button_row {
+.button_row {
   width: 1109px;
+  margin: auto;
+}
+
+#steps {
+  height: 25px;
+}
+
+#canvas {
+  width: 741px;
   margin: auto;
 }
