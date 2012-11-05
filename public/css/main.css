@@ -14,8 +14,9 @@ h3 {
 
 textarea {
   font-family: monaco;
+  font-size: 12px;
   height: 193px;
-  width: 260px;
+  width: 270px;
   overflow: hidden;
 }
 
@@ -39,7 +40,7 @@ button {
 }
 
 #maze_row {
-  width: 898px;
+  width: 928px;
   margin: auto;
   padding: 20px;
 }
