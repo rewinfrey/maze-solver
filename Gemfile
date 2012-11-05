@@ -1,3 +1,3 @@
 source "https://rubygems.org"
-sinatra
+sinatra, '1.0'
 coffee-script
