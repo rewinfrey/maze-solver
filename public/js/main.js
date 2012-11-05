@@ -49,8 +49,7 @@
       if (this.hasnt_found_end() && this.more_to_process()) {
         return this.eval_current_node(this.to_process.shift());
       } else {
-        this.find_shortest_path();
-        return console.log(this);
+        return this.find_shortest_path();
       }
     };
 

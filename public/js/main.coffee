@@ -27,7 +27,6 @@ class Maze
       this.eval_current_node(this.to_process.shift())
     else
       this.find_shortest_path()
-      console.log this
 
   hasnt_found_end: ->
     this.end == null
