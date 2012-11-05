@@ -5,12 +5,15 @@ body {
 h1 {
   width: 220px;
   margin: 40px auto;
+  font-size: 32px;
 }
 
 h3 {
   width: 360px;
   margin: 30px auto 0 auto;
+  font-size: 19px;
 }
+
 
 textarea {
   font-family: monaco;
