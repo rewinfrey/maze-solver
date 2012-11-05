@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + '/maze'
+require './maze'
 require 'rubygems'
 require 'sinatra'
 require './web'
