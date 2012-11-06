@@ -9,14 +9,14 @@ About
 Maze Solver is a visual representation of a breadth-first search strategy to solve a maze.
 
 The following rules apply:
-1. Determine if the maze is solvable
-2. Determine the most efficient path
+* Determine if the maze is solvable
+* Determine the most efficient path
 
 Maze-specific symbols:
-1. A   = starting point
-2. B   = ending point
-3. '#' = boundary
-4. ' ' = viable path
+* A   = starting point
+* B   = ending point
+* '#' = boundary
+* ' ' = viable path
 
 Any of the six mazes provided can be altered and run against the application, so long as the above mentioned symbols are used.
 
