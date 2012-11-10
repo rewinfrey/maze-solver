@@ -4,22 +4,22 @@ body {
 
 h1 {
   width: 220px;
-  margin: 40px auto;
+  margin: 0 auto 40px auto;
   font-size: 30px;
 }
 
 h3 {
   width: 360px;
-  margin: 30px auto 0 auto;
+  margin: 100px auto 0 auto;
   font-size: 18px;
 }
 
 
 textarea {
   font-family: monaco;
-  font-size: 12px;
-  height: 205px;
-  width: 270px;
+  font-size: 18px;
+  height: 320px;
+  width: 412px;
   overflow: hidden;
 }
 
@@ -28,10 +28,10 @@ textarea.maze {
 }
 
 button {
-  display: inline-block;
+  display: block;
   height: 40px;
   width: 100px;
-  margin-left: 207px;
+  margin-bottom: 20px;
 }
 
 .first {
@@ -49,11 +49,39 @@ button {
   margin: auto;
 }
 
+#maze_container {
+  width: 1000px;
+  margin: auto;
+}
+
+.button_column {
+  width: 100px;
+  float: left;
+  margin-left: 120px;
+}
+
+#maze_column {
+  width: 418px;
+  float: right;
+  margin-right: 290px;
+  margin-top: 10px;
+}
+
+#solve_column {
+  width: 100px;
+  float: right;
+  margin-top: -45px;
+  margin-right: 125px;
+}
+
 #steps {
+  float: left;
   height: 25px;
+  margin-top: 40px;
+  margin-left: 100px;
 }
 
 #canvas {
-  width: 741px;
+  width: 748px;
   margin: auto;
 }

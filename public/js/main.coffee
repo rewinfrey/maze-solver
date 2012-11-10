@@ -97,23 +97,23 @@ class AnimateMaze
   constructor: ->
     this.ctx      = document.getElementById("maze_solution").getContext("2d")
     this.steps    = 0
-  
+
   draw: (y, x, element) ->
     switch element
       when "border"
         this.ctx.clearRect(x * 20, y * 20, 20, 20)
         this.ctx.fillStyle = "rgb(215,129,6)"
         this.ctx.fillRect(x * 20, y * 20, 20, 20)
-      when " "
+      when "space"
         this.ctx.clearRect(x * 20, y * 20, 20, 20)
-        this.ctx.fillStyle = "rgb(1,1,1)"
+        this.ctx.fillStyle = "rgb(255,255,255)"
         this.ctx.fillRect(x * 20, y * 20, 20, 20)
       when "to_process"
-        this.ctx.clearRect(x * 20, y * 20, 20, 20)      
+        this.ctx.clearRect(x * 20, y * 20, 20, 20)
         this.ctx.fillStyle = "rgb(100,100,100)"
         this.ctx.fillRect(x * 20, y * 20, 20, 20)
       when "processed"
-        this.ctx.clearRect(x * 20, y * 20, 20, 20)      
+        this.ctx.clearRect(x * 20, y * 20, 20, 20)
         this.ctx.fillStyle = "rgb(100,100,100)"
         this.ctx.fillRect(x * 20, y * 20, 20, 20)
       when "start"
@@ -182,16 +182,122 @@ class Node
     this.state  = @state
 
 $(document).ready () ->
-  $('button').click () ->
-    id = $(this).attr("id")
-    document.getElementById("maze_solution").getContext("2d").clearRect(0, 0, 800, 800)
-    $('#steps').html(" ")
-    load_maze(parseInt(id))
-    
-
-load_maze = (num) ->
+  $('.mazes').click () ->
+    id = parseInt($(this).attr("id"))
+    $('.selected').removeClass("selected")
+    $(this).addClass("selected")
+    maze = maze_select(id)
+    $('textarea[id="selected"]').val(maze)
+  
+  $('#solve').click () ->
+    load_maze()
+  
+load_maze = () ->
+  maze_string = $('textarea[id="selected"]').val()
   animate_maze = new AnimateMaze
-  maze = new Maze $('textarea[maze='+num+']').val()
+  maze = new Maze maze_string
   maze.solve()
   animate_maze.draw_maze(maze.maze)
   animate_maze.draw_history(maze.history, maze.solution)
+
+maze_select = (id) ->
+  switch id
+    when 1
+      maze = "#####################################\n
+# #   #     #A        #     #       #\n
+# # # # # # ####### # ### # ####### #\n
+# # #   # #         #     # #       #\n
+# ##### # ################# # #######\n
+#     # #       #   #     # #   #   #\n
+##### ##### ### ### # ### # # # # # #\n
+#   #     #   # #   #  B# # # #   # #\n
+# # ##### ##### # # ### # # ####### #\n
+# #     # #   # # #   # # # #       #\n
+# ### ### # # # # ##### # # # ##### #\n
+#   #       #   #       #     #     #\n
+#####################################\n"
+    when 2
+      maze = "#####################################\n
+# #       #             #     #     #\n
+# ### ### # ########### ### # ##### #\n
+# #   # #   #   #   #   #   #       #\n
+# # ###A##### # # # # ### ###########\n
+#   #   #     #   # # #   #         #\n
+####### # ### ####### # ### ####### #\n
+#       # #   #       # #       #   #\n
+# ####### # # # ####### # ##### # # #\n
+#       # # # #   #       #   # # # #\n
+# ##### # # ##### ######### # ### # #\n
+#     #   #                 #     #B#\n
+#####################################\n"
+    when 3
+      maze = "#####################################\n
+# #   #           #                 #\n
+# ### # ####### # # # ############# #\n
+#   #   #     # #   # #     #     # #\n
+### ##### ### ####### # ##### ### # #\n
+# #       # #  A  #   #       #   # #\n
+# ######### ##### # ####### ### ### #\n
+#               ###       # # # #   #\n
+# ### ### ####### ####### # # # # ###\n
+# # # #   #     #B#   #   # # #   # #\n
+# # # ##### ### # # # # ### # ##### #\n
+#   #         #     #   #           #\n
+#####################################\n"
+    when 4
+      maze = "#####################################\n
+#            A                      #\n
+#                                   #\n
+#                                   #\n
+#                                   #\n
+#                                   #\n
+#                                   #\n
+#                      B            #\n
+#                                   #\n
+#                                   #\n
+#                                   #\n
+#                                   #\n
+#####################################\n"
+    when 5
+      maze = "#####################################\n
+# #       #             #     #  A  #\n
+# ### ### # ########### ### # # ### #\n
+# #   # #   #   #   #   #   #       #\n
+# # ### ## ## # # # # ### ###########\n
+#   #   #     #   # # #   #         #\n
+####### # ### ####### # ### ####### #\n
+#    A  # #   #       # #       #   #\n
+# ####### # # # ####### # ##### # # #\n
+#       # # # #   #       # B # # # #\n
+# ##### # # ##### ######### # ### # #\n
+#     #   #                 #     # #\n
+#####################################\n"
+    when 6
+      maze = "#####################################\n
+# #   #           #                B#\n
+# ### # ####### # # # ### ######### #\n
+#   #   #     # #   # #     #     # #\n
+### ##### ### ####### # ##### ### # #\n
+# #       # #     #   #       #   # #\n
+# ######### ##### # ####### ### ### #\n
+#   A           ###       # # # #   #\n
+# ### ### ####### ####### # # # # ###\n
+# # # #   #     # #   #   # # #   # #\n
+# # # ##### ### # # # # ### # ##### #\n
+#   #         #     #   #           #\n
+#####################################\n"
+    else
+      maze = "#####################################\n
+# #   #     #A        #     #       #\n
+# # # # # # ####### # ### # ####### #\n
+# # #   # #         #     # #       #\n
+# ##### # ################# # #######\n
+#     # #       #   #     # #   #   #\n
+##### ##### ### ### # ### # # # # # #\n
+#   #     #   # #   #  B# # # #   # #\n
+# # ##### ##### # # ### # # ####### #\n
+# #     # #   # # #   # # # #       #\n
+# ### ### # # # # ##### # # # ##### #\n
+#   #       #   #       #     #     #\n
+#####################################\n"
+  return maze
