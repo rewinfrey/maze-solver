@@ -193,6 +193,7 @@ $(document).ready () ->
     load_maze()
   
 load_maze = () ->
+  $('#steps').html(" ")
   maze_string = $('textarea[id="selected"]').val()
   animate_maze = new AnimateMaze
   maze = new Maze maze_string

@@ -292,6 +292,7 @@
 
   load_maze = function() {
     var animate_maze, maze, maze_string;
+    $('#steps').html(" ");
     maze_string = $('textarea[id="selected"]').val();
     animate_maze = new AnimateMaze;
     maze = new Maze(maze_string);
